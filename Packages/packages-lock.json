@@ -180,7 +180,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.vscode": {
-      "version": "1.2.4",
+      "version": "1.2.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -225,7 +225,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.package-validation-suite": {
-      "version": "0.23.4-preview",
+      "version": "0.23.8-preview",
       "depth": 0,
       "source": "registry",
       "dependencies": {
