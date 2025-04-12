@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0bb78ebc50607f04d907cf77a9e1f1ce
+guid: 77e86fbaab7736b4bb7d87bce4dcd4dd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7625175236475010377
-    second: tumblr_n0y977vpD51srot8so1_1280_0
+      213: -6272182653748628671
+    second: blastalot-base-crouch-alpha_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tumblr_n0y977vpD51srot8so1_1280_0
+      name: blastalot-base-crouch-alpha_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 9
         y: 0
-        width: 828
-        height: 358
+        width: 25
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7b24dc7b58fed2690800000000000000
-      internalID: -7625175236475010377
+      spriteID: 14332fc9b1bb4f8a0800000000000000
+      internalID: -6272182653748628671
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      tumblr_n0y977vpD51srot8so1_1280_0: -7625175236475010377
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
