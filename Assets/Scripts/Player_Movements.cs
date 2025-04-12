@@ -1,16 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 
-public class Player_Movements : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     private bool facingRight = true;
-
-    [Header("Shooting")]
-    public GameObject projectilePrefab;
-    public Transform firePoint;
-    public KeyCode shootKey = KeyCode.X;
 
     [Header("Movement")]
     public float moveSpeed = 5f;
@@ -32,18 +26,18 @@ public class Player_Movements : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.sharedMaterial = null; 
+        rb.sharedMaterial = null; // Assurez-vous qu'il n'y a pas de friction via le Physics Material
     }
 
     void Update()
     {
-        
+        // --- Détection du sol ---
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        
+        // --- Entrée du joueur ---
         moveInput = Input.GetAxisRaw("Horizontal");
 
-        
+        // --- Saut initial ---
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             isJumping = true;
@@ -51,7 +45,7 @@ public class Player_Movements : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
 
-        
+        // --- Maintien du saut ---
         if (Input.GetButton("Jump") && isJumping)
         {
             if (jumpTimeCounter > 0)
@@ -65,7 +59,7 @@ public class Player_Movements : MonoBehaviour
             }
         }
 
-        
+        // --- Fin du saut ---
         if (Input.GetButtonUp("Jump"))
         {
             isJumping = false;
@@ -75,19 +69,11 @@ public class Player_Movements : MonoBehaviour
             Flip();
         else if (moveInput < 0 && facingRight)
             Flip();
-
-        if (SceneManager.GetActiveScene().name == "Hell_Test") 
-        {
-            if (Input.GetKeyDown(shootKey))
-            {
-                Shoot();
-            }
-        }
     }
 
     void FixedUpdate()
     {
-        
+        // --- Mouvement horizontal glissant (pas de friction) ---
         float targetVelocityX = moveInput * moveSpeed;
         float velocityX = Mathf.Lerp(rb.linearVelocity.x, targetVelocityX, acceleration * Time.fixedDeltaTime);
         rb.linearVelocity = new Vector2(velocityX, rb.linearVelocity.y);
@@ -108,22 +94,5 @@ public class Player_Movements : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
-    }
-
-    void Shoot()
-    {
-        Debug.Log("Tir !");
-        Vector2 shootDirection = transform.localScale.x > 0 ? Vector2.right : Vector2.left;
-
-        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
-        projectile.GetComponent<Projectile>().SetDirection(shootDirection);
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Finish"))
-        {
-            SceneManager.LoadScene("Paradise_Test");
-        }
     }
 }
