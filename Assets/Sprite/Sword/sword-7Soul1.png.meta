@@ -237,6 +237,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1309,7 +1322,55 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sword-7Soul1_0: 3985368686169034054
+      sword-7Soul1_1: -7560176382720306017
+      sword-7Soul1_10: -3744106544591299519
+      sword-7Soul1_11: 5939425088386906681
+      sword-7Soul1_12: -3368256651298323885
+      sword-7Soul1_13: -7770250026790543764
+      sword-7Soul1_14: -3606242809871131500
+      sword-7Soul1_15: 1824973294513635742
+      sword-7Soul1_16: 6368938814567188487
+      sword-7Soul1_17: -8027026673683112096
+      sword-7Soul1_18: 2054763842088247457
+      sword-7Soul1_19: 908264436192381305
+      sword-7Soul1_2: -6222771958912713867
+      sword-7Soul1_20: 1491782070488201810
+      sword-7Soul1_21: -2921913994093826309
+      sword-7Soul1_22: 4324003437204385659
+      sword-7Soul1_23: -3436086895230926110
+      sword-7Soul1_24: 1173435412654150894
+      sword-7Soul1_25: 7330527673376672941
+      sword-7Soul1_26: 3963943757102124517
+      sword-7Soul1_27: -8196567150431545388
+      sword-7Soul1_28: -8399156912165527903
+      sword-7Soul1_29: 5875253862044792087
+      sword-7Soul1_3: 1178893537826534941
+      sword-7Soul1_30: 5000048906747312709
+      sword-7Soul1_31: -5892142059291568636
+      sword-7Soul1_32: -5078155430130834117
+      sword-7Soul1_33: -7582200233250868822
+      sword-7Soul1_34: 1812215100474108108
+      sword-7Soul1_35: -1675650853918569129
+      sword-7Soul1_36: -1427407406842843424
+      sword-7Soul1_37: 3646319833540326897
+      sword-7Soul1_38: -3097308121026149380
+      sword-7Soul1_39: -8561641366818711235
+      sword-7Soul1_4: -1439424240462550654
+      sword-7Soul1_40: -2928468285155773844
+      sword-7Soul1_41: -4516849911527008225
+      sword-7Soul1_42: -1460650525137759855
+      sword-7Soul1_43: 7252573242202977023
+      sword-7Soul1_44: 3311977054265547603
+      sword-7Soul1_45: 2278159781755166589
+      sword-7Soul1_46: -4053346402019915136
+      sword-7Soul1_47: -3134804902227523257
+      sword-7Soul1_5: -6141825925238674203
+      sword-7Soul1_6: -7775348798339392481
+      sword-7Soul1_7: -6494822353801841131
+      sword-7Soul1_8: 6139769819909010688
+      sword-7Soul1_9: -81717238871865370
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
