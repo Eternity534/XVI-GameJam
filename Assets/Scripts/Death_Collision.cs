@@ -6,7 +6,6 @@ public class Death_Collision : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            // Recharge la scène si le joueur touche
             UnityEngine.SceneManagement.SceneManager.LoadScene(
                 UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         }
