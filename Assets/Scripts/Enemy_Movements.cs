@@ -34,7 +34,10 @@ public class Enemy_Movements : MonoBehaviour
 
         if (Mathf.Abs(transform.position.x - startPosition.x) >= moveDistance)
         {
-            movingRight = !movingRight; 
+            movingRight = !movingRight;
+            Vector3 scale = transform.localScale;
+            scale.x *= -1;
+            transform.localScale = scale;
         }
     }
 }

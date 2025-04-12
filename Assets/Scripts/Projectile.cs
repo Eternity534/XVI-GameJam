@@ -5,14 +5,17 @@ public class Projectile : MonoBehaviour
     public float speed = 10f;
     public float lifetime = 2f;
     public int damage = 10;
-    private Vector2 direction;
+    private Rigidbody2D rb;
+    private Vector2 direction;          
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 0f;
         Destroy(gameObject, lifetime);
     }
-
-    public void SetDirection(Vector2 dir)
+    
+   public void SetDirection(Vector2 dir)
     {
         direction = dir.normalized;
     }
@@ -22,16 +25,17 @@ public class Projectile : MonoBehaviour
         transform.Translate(direction * speed * Time.deltaTime);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            Enemy_Health enemyHealth = other.GetComponent<Enemy_Health>();
+            Enemy_Health enemyHealth = collision.gameObject.GetComponent<Enemy_Health>();
+
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(damage); 
+                enemyHealth.TakeDamage(damage);
             }
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
     }
 }

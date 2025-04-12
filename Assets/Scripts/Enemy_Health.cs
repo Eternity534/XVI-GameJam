@@ -13,14 +13,22 @@ public class Enemy_Health : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
+            Player_Health playerHealth = collision.gameObject.GetComponent<Player_Health>();
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damage);
+            }
+        }
+        if (collision.gameObject.CompareTag("Ally"))
+        {
+            Invocation invocationHealth = collision.gameObject.GetComponent<Invocation>();
+            if (invocationHealth != null)
+            {
+                invocationHealth.TakeDamage(damage);
             }
         }
     }

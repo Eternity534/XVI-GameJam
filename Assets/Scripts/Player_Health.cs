@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PlayerHealth : MonoBehaviour
+public class Player_Health : MonoBehaviour
 {
     public int maxHealth = 100; 
     private int currentHealth; 

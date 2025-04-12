@@ -7,17 +7,14 @@ public class Player_Movements : MonoBehaviour
 {
     private bool facingRight = true;
 
-    [Header("Shooting")]
-    public GameObject projectilePrefab;
-    public Transform firePoint;
-    public KeyCode shootKey = KeyCode.X;
-
     [Header("Movement")]
-    public float moveSpeed = 5f;
+    public float defaultMoveSpeed = 5f;
+    public float moveSpeed;
     public float acceleration = 20f;
 
     [Header("Jump")]
-    public float jumpForce = 12f;
+    public float defaultJumpForce = 12f;
+    public float jumpForce;
     public float jumpTimeMax = 0.3f;
     public LayerMask groundLayer;
     public Transform groundCheck;
@@ -76,12 +73,20 @@ public class Player_Movements : MonoBehaviour
         else if (moveInput < 0 && facingRight)
             Flip();
 
-        if (SceneManager.GetActiveScene().name == "Hell_Test") 
+
+        // Speed / Jump Boost Ability
+
+        if (SceneManager.GetActiveScene().name == "Paradise_Test")  
         {
-            if (Input.GetKeyDown(shootKey))
-            {
-                Shoot();
-            }
+            jumpForce = 20f;
+            moveSpeed = 10f; 
+            Physics2D.gravity = new Vector2(0, -9f); 
+        }
+        else
+        {
+            jumpForce = defaultJumpForce;
+            moveSpeed = defaultMoveSpeed;
+            Physics2D.gravity = new Vector2(0, -15f);
         }
     }
 
@@ -108,15 +113,6 @@ public class Player_Movements : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
-    }
-
-    void Shoot()
-    {
-        Debug.Log("Tir !");
-        Vector2 shootDirection = transform.localScale.x > 0 ? Vector2.right : Vector2.left;
-
-        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
-        projectile.GetComponent<Projectile>().SetDirection(shootDirection);
     }
 
     void OnTriggerEnter2D(Collider2D other)
