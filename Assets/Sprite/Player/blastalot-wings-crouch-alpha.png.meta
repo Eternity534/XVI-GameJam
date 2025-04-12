@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      blastalot-wings-crouch-alpha_0: 5845077487710346405
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

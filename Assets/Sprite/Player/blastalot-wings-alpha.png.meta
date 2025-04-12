@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      blastalot-wings-alpha_0: 6084738591697992083
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

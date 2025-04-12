@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      blastalot-base-crouch-alpha_0: -6272182653748628671
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
