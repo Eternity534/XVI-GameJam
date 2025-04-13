@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class BossController : MonoBehaviour
 {
@@ -28,6 +29,10 @@ public class BossController : MonoBehaviour
 
     private Vector2 targetPosition;
     private bool isMoving = false;
+
+    [Header("Mur à ouvrir après la mort du boss")]
+    public Tilemap wallTilemap;
+    public Vector3Int[] wallTilesToRemove;
 
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -137,6 +142,13 @@ public class BossController : MonoBehaviour
     void Die()
     {
         BossHealthUI.Instance.Hide();
+        if (wallTilemap != null)
+        {
+            foreach(Vector3Int pos in wallTilesToRemove)
+            {
+                wallTilemap.SetTile(pos, null);
+            }
+        }
         Destroy(gameObject);
     }
 }
