@@ -13,6 +13,13 @@ public class PlayerAbility : MonoBehaviour
     public Transform firePoint;
     public KeyCode shootKey = KeyCode.X;
 
+    private Animator animator;
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(invocationKey))
@@ -24,6 +31,7 @@ public class PlayerAbility : MonoBehaviour
         {
             if (Input.GetKeyDown(shootKey))
             {
+                animator.SetBool("Attack", Input.GetKey(shootKey));
                 Shoot();
             }
         }

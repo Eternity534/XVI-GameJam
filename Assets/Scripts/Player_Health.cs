@@ -19,10 +19,12 @@ public class Player_Health : MonoBehaviour
 
     public static GameManagerScript Instance;
 
+    private Animator animator;
+
     void Start()
     {
         currentHealth = maxHealth; 
-
+        animator = GetComponent<Animator>();
         if (healthSlider != null)
         {
             healthSlider.maxValue = maxHealth; 
@@ -60,6 +62,7 @@ public class Player_Health : MonoBehaviour
 
     void Die()
     {
+        animator.SetBool("Death", true);
         GameManagerScript.Instance.gameOver();  
     }
 
