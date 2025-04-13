@@ -1,15 +1,17 @@
 using UnityEngine;
 
-public class WorldSwitchZone : MonoBehaviour
+public class WorldSwitchPortal : MonoBehaviour
 {
+    public Transform teleportTarget;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            WorldShifter switchScript = other.GetComponent<WorldShifter>();
+            Player_WorldSwitch switchScript = other.GetComponent<Player_WorldSwitch>();
             if (switchScript != null)
             {
-                switchScript.canSwitchWorld = true;
+                switchScript.EnableWorldSwitch(teleportTarget);
             }
         }
     }
@@ -18,10 +20,10 @@ public class WorldSwitchZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            WorldShifter switchScript = other.GetComponent<WorldShifter>();
+            Player_WorldSwitch switchScript = other.GetComponent<Player_WorldSwitch>();
             if (switchScript != null)
             {
-                switchScript.canSwitchWorld = false;
+                switchScript.DisableWorldSwitch();
             }
         }
     }
