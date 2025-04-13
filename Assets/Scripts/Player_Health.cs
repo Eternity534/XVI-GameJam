@@ -9,6 +9,8 @@ public class Player_Health : MonoBehaviour
 
     public Slider healthSlider; 
 
+    public GameManagerScript gameManager;
+
     void Start()
     {
         currentHealth = maxHealth; 
@@ -39,15 +41,15 @@ public class Player_Health : MonoBehaviour
 
     void Die()
     {
-        RestartScene();
+        gameManager.gameOver();
     }
 
-
+    /*
     void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
     }
-
+    */
 
     public void Heal(int healAmount)
     {
