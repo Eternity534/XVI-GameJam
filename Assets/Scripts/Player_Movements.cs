@@ -23,8 +23,11 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping;
     private float jumpTimeCounter;
 
+    private Animator animator;
+
     void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         rb.sharedMaterial = null; // Assurez-vous qu'il n'y a pas de friction via le Physics Material
     }
@@ -43,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
             jumpTimeCounter = jumpTimeMax;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            animator.SetBool("Jump", !isGrounded);
         }
 
         // --- Maintien du saut ---
@@ -69,6 +73,8 @@ public class PlayerMovement : MonoBehaviour
             Flip();
         else if (moveInput < 0 && facingRight)
             Flip();
+
+        animator.SetFloat("Speed", Mathf.Abs(moveInput));
     }
 
     void FixedUpdate()
