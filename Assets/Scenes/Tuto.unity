@@ -41801,8 +41801,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31fb1a812317e084e8b3ab484c8b728a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldYOffset: -100
-  canSwitchWorld: 0
 --- !u!1 &852794951
 GameObject:
   m_ObjectHideFlags: 0
@@ -41833,6 +41831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01fe9e7f8c8aaf645a52ed9a7aa1ed91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teleportTarget: {fileID: 0}
 --- !u!61 &852794953
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47468,6 +47467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01fe9e7f8c8aaf645a52ed9a7aa1ed91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teleportTarget: {fileID: 0}
 --- !u!1 &1890411571
 GameObject:
   m_ObjectHideFlags: 0
@@ -49957,6 +49957,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 11, y: 4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 2
+      m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 39, y: 4, z: 0}
     second:
       serializedVersion: 2
@@ -50243,7 +50253,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 51bf9b1831f5160408d14d60572862fb, type: 2}
   - m_RefCount: 19
     m_Data: {fileID: 11400000, guid: 2ad1c4723d972024eb4fca38fc888020, type: 2}
-  - m_RefCount: 18
+  - m_RefCount: 19
     m_Data: {fileID: 11400000, guid: d268d13ad11c48149addac5d1f0d8966, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 4df7f69c0660a5a4abc4267d04b3c519, type: 2}
@@ -50262,7 +50272,7 @@ Tilemap:
     m_Data: {fileID: -2036214442, guid: cca1a966ab98281458e6e3446fd11c63, type: 3}
   - m_RefCount: 19
     m_Data: {fileID: -1858126071, guid: cca1a966ab98281458e6e3446fd11c63, type: 3}
-  - m_RefCount: 18
+  - m_RefCount: 19
     m_Data: {fileID: 2132565347, guid: cca1a966ab98281458e6e3446fd11c63, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 2060485732, guid: cca1a966ab98281458e6e3446fd11c63, type: 3}
@@ -50277,7 +50287,7 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: -339357493, guid: cca1a966ab98281458e6e3446fd11c63, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 83
+  - m_RefCount: 84
     m_Data:
       e00: 1
       e01: 0
@@ -50314,7 +50324,7 @@ Tilemap:
       e32: 7.27e-43
       e33: 7.24e-43
   m_TileColorArray:
-  - m_RefCount: 83
+  - m_RefCount: 84
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
