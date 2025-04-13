@@ -10,7 +10,7 @@ public class BossZoneTrigger : MonoBehaviour
         {
             hasTriggered = true;
 
-            GameObject bossObject = GameObject.Find("Boss"); 
+            GameObject bossObject = GameObject.Find("BossTuto");
             if (bossObject != null)
             {
                 bossObject.SetActive(true);

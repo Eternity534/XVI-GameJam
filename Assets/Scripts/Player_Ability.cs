@@ -20,7 +20,7 @@ public class PlayerAbility : MonoBehaviour
             InvoquerAlly();
         }
 
-        if (SceneManager.GetActiveScene().name == "TutoLevelHell") 
+        if (SceneManager.GetActiveScene().name == "Tuto") 
         {
             if (Input.GetKeyDown(shootKey))
             {

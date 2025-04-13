@@ -4,7 +4,7 @@ public class WorldShifter : MonoBehaviour
 {
     public float worldYOffset = 100f; // Décalage entre les mondes
     private bool isInWorldA = true;
-
+    public bool canSwitchWorld = false;
     private Rigidbody2D rb;
 
     void Start()
@@ -14,7 +14,7 @@ public class WorldShifter : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (canSwitchWorld && Input.GetKeyDown(KeyCode.E))
         {
             ShiftWorld();
         }
