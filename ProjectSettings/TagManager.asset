@@ -3,19 +3,25 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - WorldA
+  - WorldB
+  - Enemy
+  - PlayerProjectile
+  - Boss
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Ground
   - Death
-  - 
-  - 
-  - 
+  - WorldA
+  - WorldB
+  - Enemy
   - 
   - 
   - 

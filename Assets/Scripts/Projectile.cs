@@ -25,16 +25,22 @@ public class Projectile : MonoBehaviour
         transform.Translate(direction * speed * Time.deltaTime);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy"))
         {
-            Enemy_Health enemyHealth = collision.gameObject.GetComponent<Enemy_Health>();
+            other.GetComponent<Enemy_Health>()?.TakeDamage(damage);
+            Destroy(gameObject);
+        }
 
-            if (enemyHealth != null)
-            {
-                enemyHealth.TakeDamage(damage);
-            }
+        if (other.CompareTag("Boss"))
+        {
+            other.GetComponent<BossController>()?.TakeDamage(damage);
+            Destroy(gameObject);
+        }
+
+        if (other.CompareTag("Ground"))
+        {
             Destroy(gameObject);
         }
     }
