@@ -6,19 +6,12 @@ public class PlayerAbility : MonoBehaviour
     [Header("Invocation")]
     public GameObject allyPrefab;
     public Transform spawnPoint;
-    public KeyCode invocationKey = KeyCode.C;
+    public KeyCode invocationKey = KeyCode.T;
 
     [Header("Shooting")]
     public GameObject projectilePrefab;
     public Transform firePoint;
-    public KeyCode shootKey = KeyCode.X;
-
-    private Animator animator;
-
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
+    public KeyCode shootKey = KeyCode.R;
 
     void Update()
     {
@@ -27,13 +20,9 @@ public class PlayerAbility : MonoBehaviour
             InvoquerAlly();
         }
 
-        if (SceneManager.GetActiveScene().name == "Tuto") 
+        if (Input.GetKeyDown(shootKey))
         {
-            if (Input.GetKeyDown(shootKey))
-            {
-                animator.SetBool("Attack", Input.GetKey(shootKey));
-                Shoot();
-            }
+            Shoot();
         }
     }
 
